@@ -97,6 +97,19 @@ contactForm.addEventListener('submit', (e) => {
   contactForm.reset();
 });
 
+// ====== 修复锚点链接：减去导航栏高度 ======
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const headerHeight = 70;
+      const targetPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+      window.scrollTo({ top: targetPos, behavior: 'smooth' });
+    }
+  });
+});
+
 // ====== 初始化：首屏元素直接可见 ======
 window.addEventListener('load', () => {
   const heroElements = document.querySelectorAll('.hero .animate-in');
