@@ -104,6 +104,54 @@ ul { list-style: none; }
 .product-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
 .product-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
 
+/* ====== 品牌故事 ====== */
+.brand-story { background: var(--white); }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+.story-text h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: var(--accent); }
+.story-text p { color: var(--text-light); line-height: 1.8; margin-bottom: 14px; }
+.story-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.value-item { background: var(--bg); padding: 24px 20px; border-radius: var(--radius); text-align: center; transition: var(--transition); }
+.value-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.value-item i { font-size: 1.8rem; color: var(--primary); margin-bottom: 12px; }
+.value-item h4 { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.value-item p { font-size: 0.9rem; color: var(--text-light); }
+
+/* ====== 定制流程 ====== */
+.process { background: var(--bg); }
+.process-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; align-items: start; }
+.step { text-align: center; padding: 30px 16px; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); transition: var(--transition); }
+.step:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.step-num { font-size: 2rem; font-weight: 900; color: var(--primary); opacity: 0.3; line-height: 1; margin-bottom: 8px; }
+.step-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+.step-icon i { font-size: 1.4rem; color: var(--white); }
+.step h3 { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.step p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+.step-arrow { display: flex; align-items: center; justify-content: center; color: var(--primary-light); font-size: 1.2rem; padding-top: 50px; }
+
+/* ====== 选材品质 ====== */
+.materials { background: var(--white); }
+.materials-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.material-item { padding: 36px 24px; text-align: center; border-radius: var(--radius); background: var(--bg); transition: var(--transition); }
+.material-item:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.material-img { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary-light), var(--primary)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.material-img i { font-size: 1.8rem; color: var(--white); }
+.material-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+.material-item p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+
+@media (max-width: 1024px) {
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .step-arrow:nth-child(4), .step-arrow:nth-child(8) { display: none; }
+  .materials-grid { grid-template-columns: repeat(2, 1fr); }
+  .story-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .process-steps { grid-template-columns: 1fr; }
+  .step-arrow { display: none; }
+  .materials-grid { grid-template-columns: 1fr; }
+  .story-values { grid-template-columns: 1fr 1fr; }
+}
+
 /* ====== 案例展示 ====== */
 .cases { background: var(--white); }
 .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
