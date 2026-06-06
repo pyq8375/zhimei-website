@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pyq8375.github.io/zhimei-website/sitemap.xml
