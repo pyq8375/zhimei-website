@@ -79,24 +79,6 @@ wechatModal.addEventListener('click', (e) => {
   }
 });
 
-// ====== 表单提交 ======
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = contactForm.querySelector('input[type="text"]').value;
-  const phone = contactForm.querySelector('input[type="tel"]').value;
-  
-  if (!name || !phone) {
-    alert('请填写姓名和联系电话');
-    return;
-  }
-  
-  // 目前只是演示，实际需要后端接收入库
-  // 可以改成跳转到微信或直接显示联系方式
-  alert('感谢您的咨询！\n我们将尽快与您联系。\n\n如急需，请直接拨打：\n18175158812');
-  contactForm.reset();
-});
-
 // ====== 修复锚点链接：减去导航栏高度 ======
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
