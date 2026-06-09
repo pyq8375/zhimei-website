@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>致美轻高定 — 页面跳转中</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 80px 20px; background: #f8f8f8; color: #333; }
+    .loading { margin-top: 20px; color: #999; }
+  </style>
+  <script>
+    (function() {
+      // 获取路径并转成 hash 路由
+      var path = location.pathname.replace(/^\//, '').replace(/\/$/, '').split('/')[0];
+      var routeMap = {
+        'about':    'about',
+        'story':    'story',
+        'brand':    'story',
+        'product':  'products',
+        'products': 'products',
+        'process':  'process',
+        'quality':  'materials',
+        'materials':'materials',
+        'case':     'cases',
+        'cases':    'cases',
+        'store':    'store',
+        'contact':  'contact'
+      };
+      var hash = routeMap[path];
+      if (hash) {
+        location.replace('/#' + hash);
+      } else {
+        location.replace('/');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <h1>页面跳转中</h1>
+  <p class="loading">正在为您跳转至相应页面，请稍候…</p>
+</body>
+</html>
